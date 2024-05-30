@@ -78,7 +78,7 @@ function handleRolledDice() {
 		gameOutput.classList.add("won");
 		gameOutput.classList.remove("lost");
 		gameOutput.textContent = `First die rolled: ${firstRandomNumber}. Second die rolled: ${secondRandomNumber}. Congratulations!! Waiphula!!`;
-		amountWonOutput.textContent = `MWK${amountWon}.00`;
+		amountWonOutput.textContent = `MWK$ {amountWon}.00`;
 		stakeInput.value = "";
 		console.log("Waiphula");
 	} else {
