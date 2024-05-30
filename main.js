@@ -76,14 +76,14 @@ function handleRolledDice() {
 	if (firstRandomNumber === secondRandomNumber) {
 		gameOutput.classList.add("won");
 		gameOutput.classList.remove("lost");
-		gameOutput.textContent = `Congratulations!! Waiphula!!`;
+		gameOutput.textContent = `First die rolled: ${firstRandomNumber}. Second die rolled: ${secondRandomNumber}. Congratulations!! Waiphula!!`;
 		amountWonOutput.textContent = `MWK${amountWon}.00`;
 		stakeInput.value = "";
 		console.log("Waiphula");
 	} else {
 		gameOutput.classList.add("lost");
 		gameOutput.classList.remove("won");
-		gameOutput.textContent = `Sory!! Wapha`;
+		gameOutput.textContent = `First die rolled: ${firstRandomNumber}. Second die rolled: ${secondRandomNumber}. Sorry, wapha!!`;
 		amountWonOutput.textContent = 0;
 		stakeInput.value = "";
 		console.log("Wapha");

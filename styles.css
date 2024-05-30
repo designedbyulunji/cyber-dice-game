@@ -19,7 +19,7 @@ html {
 /* Interface Style Variables */
 :root {
 	--background-color: #000000;
-	--btn-color: rgba(0, 0, 70, 0.25);
+	--btn-color: rgb(0, 0, 70);
 	--font-size: 1.5em;
 	--heading-font-size-large: 5em;
 	--heading-font-size-small: 2.5em;
@@ -267,10 +267,10 @@ button {
 
 	background-color: var(--message-area-background-color);
 	color: #fff;
-	font-weight: 500;
+	/* font-weight: 500; */
 	height: auto;
 	margin-top: 1.5em;
-	font-size: 2em;
+	font-size: 1.8em;
 	min-height: 6em;
 	padding: 0.5em 1em;
 	width: 100%;
