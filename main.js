@@ -26,6 +26,7 @@ const gameOutput = document.querySelector(".game__output");
 let firstRandomNumber;
 let secondRandomNumber;
 let amountWon;
+let amountPlaced;
 
 // Help alert
 helpBtn.addEventListener("click", handleHelp);
@@ -64,7 +65,7 @@ function handleRolledDice() {
 
 	// Handle Winnings
 	function handleAmountWon() {
-		let amountPlaced = stakeInput.value;
+		amountPlaced = stakeInput.value;
 		amountWon = amountPlaced * firstRandomNumber * secondRandomNumber;
 
 		console.log(amountPlaced);
@@ -91,5 +92,13 @@ function handleRolledDice() {
 }
 
 // handleRolledDice();
-
 rollBtn.addEventListener("click", handleRolledDice);
+
+function setButtonState() {
+	if (stakeInput.value !== "") {
+		rollBtn.classList.remove("disabled");
+	}
+}
+
+// Handle Button State
+rollBtn.addEventListener("mouseover", setButtonState);

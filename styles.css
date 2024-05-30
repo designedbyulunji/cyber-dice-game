@@ -167,6 +167,10 @@ header {
 	background-color: var(--watermark-color);
 }
 
+.btn-roll.disabled {
+	cursor: not-allowed;
+}
+
 .game__controls-stake {
 	display: flex;
 	align-content: center;
