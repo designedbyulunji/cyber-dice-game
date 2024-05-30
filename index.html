@@ -9,6 +9,66 @@
 		<link rel="Stylesheet" href="/styles.css" />
 	</head>
 	<body>
-		<main></main>
+		<!-- CYBER GAMES WATERMARK -->
+		<div class="watermark-container">
+			<h1 class="watermark">cyber games</h1>
+		</div>
+
+		<!-- Game Main Interface -->
+		<main class="main">
+			<!-- Heading -->
+			<header>
+				<h1 class="welcome-heading">Welcome</h1>
+			</header>
+			<!-- Dice Section -->
+			<div class="dice__container">
+				<!-- Dice A -->
+				<div class="dice__a-container">
+					<img class="die die--a" src="/die-a-1.svg" alt="die" />
+				</div>
+				<!-- Dice B -->
+				<div class="dice__b-container">
+					<img class="die die--b" src="/die-b-1.svg" alt="die" />
+				</div>
+			</div>
+			<!-- Stake Amount Help -->
+
+			<!-- Game controls -->
+			<div class="game__controls">
+				<!-- Roll Button -->
+				<div class="game__controls-roll">
+					<button class="btn btn-roll">
+						roll
+						<img
+							class="roll-icon"
+							src="/roll-die.png"
+							alt="roll-die"
+						/>
+					</button>
+				</div>
+				<div class="stake-amount-help">
+					<!-- Stake Input -->
+					<div class="game__controls-stake">
+						<p class="stake-indicator">Stake:</p>
+						<input
+							class="stake-input"
+							type="number"
+							min="0"
+							autofocus
+						/>
+					</div>
+					<!-- Winnings Output -->
+					<div class="game__controls-amount-won">
+						<p class="amount-won__text">Amount Won:</p>
+						<span class="amount-won"></span>
+					</div>
+					<!-- Winnings Output -->
+					<div class="game__controls-help-btn">
+						<button class="btn btn-help">help</button>
+					</div>
+				</div>
+				<div class="game__output"></div>
+			</div>
+		</main>
 	</body>
 </html>

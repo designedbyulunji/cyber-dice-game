@@ -1,9 +1,13 @@
+/* Imports */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
 /* Reset Default Styles */
 
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
+	font-family: "Inter", sans-serif;
 	padding: 0;
 	margin: 0;
 }
@@ -15,8 +19,8 @@ html {
 /* Interface Style Variables */
 :root {
 	--background-color: #000000;
-	--btn-color: rgba(0, 0, 70, 0.5);
-	--font-size: 2em;
+	--btn-color: rgba(0, 0, 70, 0.25);
+	--font-size: 1.5em;
 	--heading-font-size-large: 5em;
 	--heading-font-size-small: 2.5em;
 	--input-background-color: rgba(47, 47, 47, 0.25);
@@ -24,4 +28,240 @@ html {
 	--main-area-background-color: rgba(30, 30, 30, 0.5);
 	--main-area-stroke-color: #858889;
 	--message-area-background-color: rgba(47, 47, 47, 0.25);
+	--watermark-color: #1cb5e0;
+	--watermark-font-large: 10em;
+	--watermark-font-small: 5em;
+}
+
+/* Body styles */
+body {
+	background-color: var(--background-color);
+	color: #fff;
+	height: 100vh;
+	width: 100%;
+}
+
+/* Game watermark styles */
+.watermark-container {
+	width: 100%;
+	min-height: 100vh;
+
+	position: absolute;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.watermark {
+	color: var(--watermark-color);
+	font-size: var(--watermark-font-large);
+	text-transform: uppercase;
+
+	z-index: -1;
+	filter: blur(25px);
+}
+
+/* Main section Styles */
+.main {
+	background-color: var(--main-area-background-color);
+	width: 80%;
+	height: 90vh;
+
+	/* Interface Positioning */
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	/* Interface Borders */
+	border: 0.5px solid var(--main-area-stroke-color);
+	border-radius: 1em;
+
+	/* Interface Filters */
+
+	/* backdrop-filter: blur(2.5em); */
+}
+
+/* Interface Welcome Header */
+header {
+	margin-top: 4em;
+}
+
+.welcome-heading {
+	font-size: var(--heading-font-size-large);
+	text-align: center;
+	text-transform: uppercase;
+}
+
+/* Interface Dice Container */
+.dice__container {
+	display: grid;
+	place-content: center;
+	grid-template-columns: repeat(2, minmax(0, auto));
+	grid-template-rows: auto;
+	grid-template-areas: "dice__a-container dice__b-container";
+
+	margin-top: 4em;
+	column-gap: 4em;
+}
+
+.dice__a-container {
+	grid-area: dice__a-container;
+
+	height: auto;
+	width: 6em;
+}
+
+.dice__b-container {
+	grid-area: dice__b-container;
+
+	height: auto;
+	width: 6em;
+}
+
+.die {
+	width: 100%;
+	height: 100%;
+
+	pointer-events: none;
+}
+
+/* Interface Game Controls */
+.game__controls {
+	display: grid;
+	place-content: center;
+	grid-template-columns: repeat(3, minmax(0, auto));
+	grid-template-rows: repeat(3, minmax(0, auto));
+	grid-template-areas:
+		"roll-btn roll-btn roll-btn"
+		"stake-amount-help stake-amount-help stake-amount-help"
+		"game__output game__output game__output";
+
+	column-gap: 4em;
+	margin-top: 4em;
+}
+
+/* Roll Button Container Styles */
+.game__controls-roll {
+	grid-area: roll-btn;
+
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+/* Amount Stake Help Container Styles */
+.stake-amount-help {
+	grid-area: stake-amount-help;
+	width: 100%;
+
+	display: flex;
+	justify-content: space-between;
+
+	column-gap: 4em;
+	margin-top: 4em;
+}
+
+.btn-roll:active {
+	background-color: var(--watermark-color);
+}
+
+.game__controls-stake {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+.game__controls-amount-won {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+.game__controls-help-btn {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+
+/* Stake Styles */
+.stake-input,
+.amount-won {
+	border: none;
+	color: #fff;
+	outline: 0;
+	padding: 0 0.5em;
+	border-radius: 5px;
+
+	margin-left: 0.5em;
+	background-color: var(--input-background-color);
+}
+
+.amount-won {
+	width: 20em;
+}
+
+.stake-indicator,
+.amount-won__text {
+	align-self: center;
+	font-size: var(--font-size);
+	font-weight: 600;
+}
+
+.btn {
+	background-color: var(--btn-color);
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: var(--font-size);
+	padding: 10px 45px;
+	text-transform: uppercase;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	transition: all 250ms ease;
+}
+
+.roll-icon {
+	padding-left: 20px;
+}
+
+button {
+	padding: 10px 20px;
+	border-radius: 64px;
+}
+
+/* Help Button Styles */
+.btn-help {
+	background-color: rgb(0, 0, 70);
+	border-radius: 5px;
+}
+
+.btn-help:active {
+	background-color: var(--watermark-color);
+}
+
+/* Interface Stake Input Styles */
+
+/* Interface Amount Won Styles */
+.amount-won__text {
+	font-size: var(--font-size);
+	font-weight: 600;
+}
+
+/* Game output */
+.game__output {
+	grid-area: game__output;
+	background-color: var(--message-area-background-color);
+	width: 100%;
+	margin-top: 2em;
+	min-height: 10em;
+	height: auto;
+	padding: 0 0.5em;
+	color: #fff;
+	font-weight: 600;
 }
