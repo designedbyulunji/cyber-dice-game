@@ -264,14 +264,26 @@ button {
 /* Game output */
 .game__output {
 	grid-area: game__output;
+
 	background-color: var(--message-area-background-color);
-	width: 100%;
-	margin-top: 2em;
-	min-height: 10em;
-	height: auto;
-	padding: 0 0.5em;
 	color: #fff;
-	font-weight: 600;
+	font-weight: 500;
+	height: auto;
+	margin-top: 1.5em;
+	font-size: 2em;
+	min-height: 6em;
+	padding: 0.5em 1em;
+	width: 100%;
+}
+
+/* Win output */
+.game__output.won {
+	color: #7fff94;
+}
+
+/* Lose output */
+.game__output.lost {
+	color: #ff0000;
 }
 
 .small-screen-amount {
@@ -500,7 +512,8 @@ button {
 	/* Stake Styles */
 	.stake-input,
 	.amount-won {
-		width: 20em;
+		/* width: 20em; */
+		width: 100%;
 		min-height: 45px;
 
 		margin-left: 0;
